@@ -104,8 +104,11 @@ There are two data sets that are ‘related to red and white variants of the Por
 1. There is an excel version of the white wine data set available at https://www4.stat.ncsu.edu/~online/ datasets/white-wine.xlsx.
 
 • Download this file
+
 • Place it in a folder you know (such as your working directory for your project)
+
 • Import the data from the first sheet using the readxl package
+
 • Print out the tibble (just call the object name)
 
 ```{r}
@@ -118,6 +121,7 @@ white_wine_data
 2. When you print the data set out to the console, you may notice that some of the variable names are surrounded by backticks. This is because they are non-standard (they include a space in them). We can rename them in a number of ways. We’ll do it by reading in the variable names from the 2nd sheet of the same file.
 
 • Read in the data from the 2nd sheet. This should return a data frame with one column containing alternative versions of the variable names.
+
 • Grab that column and overwrite the current column names (colnames()) of your white wine tibble.
 
 ```{r}
@@ -186,5 +190,7 @@ wine_data <- wine_data |>
   select(contains("acid"), alcohol, wine_type, quality) |>
   group_by(quality) |>
   mutate(alcohol_mean = mean(alcohol), alcohol_sd = sd(alcohol))
+
+wine_data
 ```
 
